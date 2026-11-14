@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-body">
+    <form (submit)="addStudent($event)">
+      <div class="form-group">
+        <label for="stdName">Student Name*</label>
+        <input  type="text" class="form-control" [formField]="studentForm.stdName" />
+      </div>
+      <div class="form-group">
+        <label for="stdSirname">Student Sirname*</label>
+        <input type="text" class="form-control" [formField]="studentForm.stdSirname" />
+      </div>
+      <div class="form-group">
+        <label for="stdClass">Student Class*</label>
+        <input type="text" class="form-control" id="stdClass" [formField]="studentForm.stdClass" />
+      </div>
+      <div class="form-group">
+        <label for="stdAddress">Student Address*</label>
+        <textarea
+          type="text"
+          class="form-control"
+          id="stdAddress"
+          [formField]="studentForm.stdAddress"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="stdNumber">Student Number*</label>
+        <input
+          type="number"
+          class="form-control"
+          id="stdNumber"
+          [formField]="studentForm.stdPhone"
+        />
+      </div>
+      <div class="form-group">
+        <label for="stdFess">Student Fees*</label>
+        <input type="number" class="form-control" id="stdFess" [formField]="studentForm.stdFees" />
+      </div>
+      @if (!isInEditMode) {
+        <button class="w-100 btn btn-primary" type="submit"><mat-icon>add</mat-icon></button>
+      }
+      @if (isInEditMode) {
+        <button class="w-100 btn btn-success" type="button" (click)="onEditStudent()">
+          <mat-icon>edit</mat-icon>
+        </button>
+      }
+    </form>
+  </div>
+</div>

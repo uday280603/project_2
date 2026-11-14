@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <app-student-form
+       (emitNewStudent)="getNewStudent($event)"
+       (emitUpdatedObj)="getUpdatedObj($event)"
+       [getEditObj]="editedObj"
+      
+      ></app-student-form>
+    </div>
+    <div class="col-md-8">
+      <app-student
+      (emitStudentForEdit)="getEditedObj($event)"
+      [getAllStudents]="stduentArr"
+      (emiteRemoveId)="getRemoveId($event)"
+      ></app-student>
+    </div>
+  </div>
+</div>
